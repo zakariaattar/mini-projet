@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Enseignant.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">minprojet</a> &gt; <a href="index.source.html" class="el_package">entite</a> &gt; <span class="el_source">Enseignant.java</span></div><h1>Enseignant.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package entite;
+
+/**
+ *
+ * @author 21277
+ */
+public class Enseignant {
+    private int id;
+    private String nom;
+    private String prenom;
+    private int telephone;
+    private String gmail;
+    private String motsDePasse;
+
+<span class="fc" id="L19">    public Enseignant() {</span>
+<span class="fc" id="L20">    }</span>
+
+<span class="fc" id="L22">    public Enseignant(int id, String nom, String prenom, int telephone, String gmail, String motsDePasse) {</span>
+<span class="fc" id="L23">        this.id = id;</span>
+<span class="fc" id="L24">        this.nom = nom;</span>
+<span class="fc" id="L25">        this.prenom = prenom;</span>
+<span class="fc" id="L26">        this.telephone = telephone;</span>
+<span class="fc" id="L27">        this.gmail = gmail;</span>
+<span class="fc" id="L28">        this.motsDePasse = motsDePasse;</span>
+<span class="fc" id="L29">    }</span>
+
+    public int getId() {
+<span class="fc" id="L32">        return id;</span>
+    }
+
+    public String getNom() {
+<span class="fc" id="L36">        return nom;</span>
+    }
+
+    public String getPrenom() {
+<span class="fc" id="L40">        return prenom;</span>
+    }
+
+    public int getTelephone() {
+<span class="fc" id="L44">        return telephone;</span>
+    }
+
+    public String getGmail() {
+<span class="fc" id="L48">        return gmail;</span>
+    }
+
+    public String getMotsDePasse() {
+<span class="fc" id="L52">        return motsDePasse;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L56">        this.id = id;</span>
+<span class="fc" id="L57">    }</span>
+
+    public void setNom(String nom) {
+<span class="fc" id="L60">        this.nom = nom;</span>
+<span class="fc" id="L61">    }</span>
+
+    public void setPrenom(String prenom) {
+<span class="fc" id="L64">        this.prenom = prenom;</span>
+<span class="fc" id="L65">    }</span>
+
+    public void setTelephone(int telephone) {
+<span class="fc" id="L68">        this.telephone = telephone;</span>
+<span class="fc" id="L69">    }</span>
+
+    public void setGmail(String gmail) {
+<span class="fc" id="L72">        this.gmail = gmail;</span>
+<span class="fc" id="L73">    }</span>
+
+    public void setMotsDePasse(String motsDePasse) {
+<span class="fc" id="L76">        this.motsDePasse = motsDePasse;</span>
+<span class="fc" id="L77">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

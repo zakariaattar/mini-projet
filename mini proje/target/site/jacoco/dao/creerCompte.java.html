@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>creerCompte.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">minprojet</a> &gt; <a href="index.source.html" class="el_package">dao</a> &gt; <span class="el_source">creerCompte.java</span></div><h1>creerCompte.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package dao;
+import entite.Etudiant;
+import entite.Enseignant;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class creerCompte {
+    
+
+    private Connection connection;
+
+<span class="nc" id="L18">    public creerCompte() {</span>
+<span class="nc" id="L19">        this.connection = connexion.getConnection();</span>
+<span class="nc" id="L20">    }</span>
+<span class="fc" id="L21">    public creerCompte(Connection connection) {</span>
+<span class="fc" id="L22">        this.connection = connection;</span>
+<span class="fc" id="L23">    }</span>
+    public boolean creerEtudiant(Etudiant etudiant, Connection conn) {
+<span class="fc" id="L25">    PreparedStatement stmt = null;</span>
+<span class="fc" id="L26">    boolean success = false;</span>
+    
+    try {
+        // Use the provided connection instead of creating a new one
+<span class="fc" id="L30">        String query = &quot;INSERT INTO etudiant (nom, prenom, gmail, mots_de_passe, telephone, code, ville, brancheid) VALUES (?, ?, ?, ?, ?, ?, ?, ?)&quot;;</span>
+        
+<span class="fc" id="L32">        stmt = conn.prepareStatement(query);</span>
+<span class="fc" id="L33">        stmt.setString(1, etudiant.getNom());</span>
+<span class="fc" id="L34">        stmt.setString(2, etudiant.getPrenom());</span>
+<span class="fc" id="L35">        stmt.setString(3, etudiant.getGmail());</span>
+<span class="fc" id="L36">        stmt.setString(4, etudiant.getMotsDePasse());</span>
+<span class="fc" id="L37">        stmt.setInt(5, etudiant.getTelephone());</span>
+<span class="fc" id="L38">        stmt.setInt(6, etudiant.getCode());</span>
+<span class="fc" id="L39">        stmt.setString(7, etudiant.getVille());</span>
+<span class="fc" id="L40">        stmt.setInt(8, etudiant.getBrancheid());</span>
+        
+<span class="fc" id="L42">        int rowsAffected = stmt.executeUpdate();</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        success = rowsAffected &gt; 0;</span>
+        
+<span class="nc" id="L45">    } catch (SQLException e) {</span>
+<span class="nc" id="L46">        e.printStackTrace();</span>
+    } finally {
+        try {
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">            if (stmt != null) stmt.close();</span>
+<span class="nc" id="L50">        } catch (SQLException e) {</span>
+<span class="nc" id="L51">            e.printStackTrace();</span>
+<span class="fc" id="L52">        }</span>
+    }
+    
+<span class="fc" id="L55">    return success;</span>
+
+    }
+    
+    public boolean creerEnseignant(Enseignant enseignant) {
+<span class="fc" id="L60">        String sql = &quot;INSERT INTO enseignant (nom, prenom, telephone, gmail, mots_de_passe) &quot; +</span>
+                     &quot;VALUES (?, ?, ?, ?, ?)&quot;;
+        
+        try (
+<span class="fc" id="L64">             PreparedStatement pstmt = connection.prepareStatement(sql)) {</span>
+            
+<span class="fc" id="L66">            pstmt.setString(1, enseignant.getNom());</span>
+<span class="fc" id="L67">            pstmt.setString(2, enseignant.getPrenom());</span>
+<span class="fc" id="L68">            pstmt.setInt(3, enseignant.getTelephone());</span>
+<span class="fc" id="L69">            pstmt.setString(4, enseignant.getGmail());</span>
+<span class="fc" id="L70">            pstmt.setString(5, enseignant.getMotsDePasse());</span>
+            
+<span class="fc" id="L72">            int rowsAffected = pstmt.executeUpdate();</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">            return rowsAffected &gt; 0;</span>
+            
+<span class="nc" id="L75">        } catch (SQLException e) {</span>
+<span class="nc" id="L76">            e.printStackTrace();</span>
+<span class="nc" id="L77">            return false;</span>
+        }
+    }
+    
+    // You might want to add validation methods to check if email or code already exists
+    public boolean isEmailExists(String email) {
+<span class="fc" id="L83">        String sql = &quot;SELECT COUNT(*) FROM etudiant WHERE gmail = ? &quot; +</span>
+                     &quot;UNION ALL &quot; +
+                     &quot;SELECT COUNT(*) FROM enseignant WHERE gmail = ?&quot;;
+        
+        try (
+<span class="fc" id="L88">             PreparedStatement pstmt = connection.prepareStatement(sql)) {</span>
+            
+<span class="fc" id="L90">            pstmt.setString(1, email);</span>
+<span class="fc" id="L91">            pstmt.setString(2, email);</span>
+            
+<span class="fc" id="L93">            try (ResultSet rs = pstmt.executeQuery()) {</span>
+<span class="fc" id="L94">                int count = 0;</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">                while (rs.next()) {</span>
+<span class="fc" id="L96">                    count += rs.getInt(1);</span>
+                }
+<span class="fc bfc" id="L98" title="All 2 branches covered.">                return count &gt; 0;</span>
+            }
+            
+<span class="nc" id="L101">        } catch (SQLException e) {</span>
+<span class="nc" id="L102">            e.printStackTrace();</span>
+<span class="nc" id="L103">            return false;</span>
+        }
+    }
+    
+    public boolean isCodeExists(int code) {
+<span class="fc" id="L108">        String sql = &quot;SELECT COUNT(*) FROM etudiant WHERE code = ?&quot;;</span>
+        
+        try (
+<span class="fc" id="L111">             PreparedStatement pstmt = connection.prepareStatement(sql)) {</span>
+            
+<span class="fc" id="L113">            pstmt.setInt(1, code);</span>
+            
+<span class="fc" id="L115">            try (ResultSet rs = pstmt.executeQuery()) {</span>
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">                if (rs.next()) {</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">                    return rs.getInt(1) &gt; 0;</span>
+                }
+<span class="nc" id="L119">                return false;</span>
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">            }</span>
+            
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        } catch (SQLException e) {</span>
+<span class="nc" id="L123">            e.printStackTrace();</span>
+<span class="nc" id="L124">            return false;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

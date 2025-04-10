@@ -1,0 +1,62 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+minprojet,entite,Branche,0,23,0,0,0,10,0,5,0,5
+minprojet,entite,Classe,0,33,0,0,0,14,0,7,0,7
+minprojet,entite,EmploieDuTemps,0,86,0,0,0,36,0,18,0,18
+minprojet,entite,Etudiant,0,96,0,0,0,40,0,20,0,20
+minprojet,entite,Administrateur,0,36,0,0,0,16,0,8,0,8
+minprojet,entite,Note,0,46,0,0,0,20,0,10,0,10
+minprojet,entite,Matiere,0,33,0,0,0,14,0,7,0,7
+minprojet,entite,Enseignant,0,66,0,0,0,28,0,14,0,14
+minprojet,dao,UserDAO,24,217,8,10,11,55,10,5,2,4
+minprojet,dao,connexion,8,8,0,0,4,2,1,1,1,1
+minprojet,dao,note,7,53,2,4,4,18,2,3,0,2
+minprojet,dao,creeremploiedao,7,79,2,4,4,22,2,3,0,2
+minprojet,dao,creerCompte,33,186,6,12,16,46,7,8,1,5
+minprojet,IHM,espaceadmine.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceEtudient.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceadmine.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceEtudient.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceadmine.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceEtudient.new Runnable() {...},10,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceadmine.new Runnable() {...},10,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creerEmploieEnseignant.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creerEmploieEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creerEmploieEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,noteEnseignant,801,0,18,0,197,0,18,0,9,0
+minprojet,IHM,espaceEtudient.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceEnseignant.new Runnable() {...},10,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creerEmploieEnseignant,1416,0,42,0,359,0,35,0,14,0
+minprojet,IHM,espaceEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,espaceEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,Login,558,0,14,0,134,0,16,0,9,0
+minprojet,IHM,espaceEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte,1960,0,46,0,472,0,42,0,19,0
+minprojet,IHM,espaceadmine,458,0,4,0,107,0,9,0,7,0
+minprojet,IHM,emploieEtudient,581,0,6,0,115,0,8,0,5,0
+minprojet,IHM,espaceEnseignant,466,0,4,0,113,0,9,0,7,0
+minprojet,IHM,noteEnseignant.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
+minprojet,IHM,noteEtudient.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,noteEtudient.new Runnable() {...},10,0,0,0,3,0,2,0,2,0
+minprojet,IHM,noteEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,noteEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,emploieEtudient.new Runnable() {...},10,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,emploieEnseignant,580,0,6,0,117,0,8,0,5,0
+minprojet,IHM,emploieEtudient.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,noteEtudient,562,0,6,0,113,0,8,0,5,0
+minprojet,IHM,espaceEtudient,480,0,4,0,113,0,9,0,7,0
+minprojet,IHM,emploieEnseignant.new Runnable() {...},10,0,0,0,3,0,2,0,2,0
+minprojet,IHM,emploieEnseignant.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,Login.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,Login.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,Login.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+minprojet,IHM,creercompte.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0

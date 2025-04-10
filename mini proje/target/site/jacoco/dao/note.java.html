@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>note.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">minprojet</a> &gt; <a href="index.source.html" class="el_package">dao</a> &gt; <span class="el_source">note.java</span></div><h1>note.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package dao;
+
+import entite.Note;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+
+public class note {
+    
+        private Connection connection;
+
+<span class="fc" id="L17">    public note () {</span>
+<span class="fc" id="L18">        this.connection = connexion.getConnection();</span>
+<span class="fc" id="L19">    }</span>
+
+public boolean savenote(Note note, Connection conn) {
+<span class="fc bfc" id="L22" title="All 2 branches covered.">    if (conn == null) {</span>
+<span class="fc" id="L23">        System.err.println(&quot;Connexion null !&quot;);</span>
+<span class="fc" id="L24">        return false; // ✅ Empêche l'erreur si la connexion est null</span>
+    }
+
+<span class="fc" id="L27">    PreparedStatement stmt = null;</span>
+<span class="fc" id="L28">    boolean success = false;</span>
+
+    try {
+<span class="fc" id="L31">        String query = &quot;INSERT INTO note (valeur, etudiantcode, matiereid) VALUES (?, ?, ?)&quot;;</span>
+<span class="fc" id="L32">        stmt = conn.prepareStatement(query);</span>
+<span class="fc" id="L33">        stmt.setInt(1, note.getValeur());</span>
+<span class="fc" id="L34">        stmt.setInt(2, note.getCode());</span>
+<span class="fc" id="L35">        stmt.setInt(3, note.getMatierid());</span>
+
+<span class="fc" id="L37">        int rowsAffected = stmt.executeUpdate();</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        success = rowsAffected &gt; 0;</span>
+
+<span class="nc" id="L40">    } catch (SQLException e) {</span>
+<span class="nc" id="L41">        e.printStackTrace();</span>
+    } finally {
+        try {
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">            if (stmt != null) stmt.close();</span>
+<span class="nc" id="L45">        } catch (SQLException e) {</span>
+<span class="nc" id="L46">            e.printStackTrace();</span>
+<span class="fc" id="L47">        }</span>
+    }
+
+<span class="fc" id="L50">    return success;</span>
+}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
