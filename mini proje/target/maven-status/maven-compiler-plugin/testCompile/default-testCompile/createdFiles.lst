@@ -1,0 +1,13 @@
+entite\EtudiantTest.class
+entite\MatiereTest.class
+entite\BrancheTest.class
+dao\ConnexionTest.class
+entite\EmploieDuTempsTest.class
+dao\UserDAOTest.class
+entite\EnseignantTest.class
+dao\NoteDAOTest.class
+entite\AdministrateurTest.class
+dao\CreerEmploieEnsTest.class
+dao\CreerCompteTest.class
+entite\NoteTest.class
+entite\ClasseTest.class
